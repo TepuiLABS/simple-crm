@@ -1,12 +1,13 @@
 <?php
 
-namespace Tepuilabs\SimpleCrm;
+namespace Tepuilabs\SimpleCrm\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
 class LeadFactory extends Factory
 {
+    protected $model = \Tepuilabs\SimpleCrm\Models\Lead::class;
 
     const ORGANIC_TYPE = 'Organic';
     const USER_SUBMITTED_TYPE = 'User Submitted';
@@ -15,7 +16,6 @@ class LeadFactory extends Factory
     const LEAD_STATUS = 'Lead';
     const CUSTOMER_STATUS = 'Customer';
 
-    protected $model = \Tepuilabs\SimpleCrm\Models\Lead::class;
 
     public function definition()
     {

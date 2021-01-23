@@ -1,6 +1,6 @@
 <?php
 
-namespace Tepuilabs\SimpleCrm;
+namespace Tepuilabs\SimpleCrm\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

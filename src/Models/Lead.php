@@ -2,16 +2,15 @@
 
 namespace Tepuilabs\SimpleCrm\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * @url https://www.hipb2b.com/blog/lead-prospect-whats-difference
  */
 class Lead extends Model
 {
-
     use HasFactory;
 
     const ORGANIC_TYPE = 'Organic';
@@ -43,6 +42,11 @@ class Lead extends Model
         return $this->hasMany(\Tepuilabs\SimpleCrm\Models\Note::class);
     }
 
+    /**
+     * Undocumented function
+     *
+     * @return array
+     */
     public static function getTypes(): array
     {
         return [
@@ -51,6 +55,11 @@ class Lead extends Model
         ];
     }
 
+    /**
+     * Undocumented function
+     *
+     * @return array
+     */
     public static function getStatuses(): array
     {
         return [

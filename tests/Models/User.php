@@ -1,10 +1,10 @@
 <?php
 namespace Tepuilabs\SimpleCrm\Tests\Models;
 
-use Tepuilabs\SimpleCrm\Traits\HasNote;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Tepuilabs\SimpleCrm\Traits\HasNote;
 
 class User extends Authenticatable
 {
