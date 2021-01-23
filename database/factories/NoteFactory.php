@@ -5,7 +5,7 @@ namespace Tepuilabs\SimpleCrm\Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
-class LeadFactory extends Factory
+class NoteFactory extends Factory
 {
     protected $model = \Tepuilabs\SimpleCrm\Models\Note::class;
 

@@ -7,10 +7,18 @@ use Tepuilabs\SimpleCrm\Tests\TestCase;
 class NoteTest extends TestCase
 {
     /** @test */
-    public function test_it_has_an_author_type()
+    public function test_it_user_can_create_a_note()
     {
-        $article = Note::factory()->create(['author_type' => 'Fake\User']);
+        $user = \Tepuilabs\SimpleCrm\Tests\Models\User::factory()->create();
+        $lead = \Tepuilabs\SimpleCrm\Models\Lead::factory()->create();
 
-        $this->assertEquals('Fake\User', $article->author_type);
+        $note = $user->notes()->create([
+            'priority' => 'Low',
+            'title'    => 'Some title',
+            'body'     => 'Some body',
+            'lead_id'  => $lead->id,
+        ]);
+
+        $this->assertInstanceOf(Note::class, $note);
     }
 }
