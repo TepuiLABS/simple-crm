@@ -14,9 +14,9 @@ class NoteTest extends TestCase
 
         $note = $user->notes()->create([
             'priority' => 'Low',
-            'title'    => 'Some title',
-            'body'     => 'Some body',
-            'lead_id'  => $lead->id,
+            'title' => 'Some title',
+            'body' => 'Some body',
+            'lead_id' => $lead->id,
         ]);
 
         $this->assertInstanceOf(Note::class, $note);
