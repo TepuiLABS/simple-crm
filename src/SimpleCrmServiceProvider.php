@@ -10,8 +10,8 @@ class SimpleCrmServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $migrationFileNames = [
-                'create_leads_table.php.php',
-                'create_notes_table.php.php',
+                'create_leads_table.php',
+                'create_notes_table.php',
             ];
 
             foreach ($migrationFileNames as $key) {
