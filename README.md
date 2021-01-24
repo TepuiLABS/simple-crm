@@ -5,7 +5,7 @@
 # simple-crm
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/tepuilabs/simple-crm.svg?style=flat-square)](https://packagist.org/packages/tepuilabs/simple-crm)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/tepuilabs/simple-crm/run-tests?label=tests)](https://github.com/tepuilabs/simple-crm/actions?query=workflow%3ATests+branch%3Amaster)
+![Tests](https://github.com/TepuiLABS/simple-crm/workflows/Tests/badge.svg)
 [![Total Downloads](https://img.shields.io/packagist/dt/tepuilabs/simple-crm.svg?style=flat-square)](https://packagist.org/packages/tepuilabs/simple-crm)
 
 
