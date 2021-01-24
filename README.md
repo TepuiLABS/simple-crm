@@ -20,13 +20,13 @@ composer require tepuilabs/simple-crm
 You can publish the modesl with:
 
 ```bash
-php artisan vendor:publish --provider="Tepuilabs\SimpleCrm\SimpleCrmServiceProvider" --tag="models"
+php artisan vendor:publish --provider="Tepuilabs\SimpleCrm\SimpleCrmServiceProvider" --tag="simple-crm-models"
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="Tepuilabs\SimpleCrm\SimpleCrmServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Tepuilabs\SimpleCrm\SimpleCrmServiceProvider" --tag="simple-crm-migrations"
 php artisan migrate
 ```
 
