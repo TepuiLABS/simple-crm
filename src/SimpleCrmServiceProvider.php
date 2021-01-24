@@ -11,7 +11,7 @@ class SimpleCrmServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../models' => base_path('Tepuilabs/SimpleCrm'),
-            ], 'models');
+            ], 'simple-crm-models');
 
             $migrationFileNames = [
                 'create_leads_table.php',
@@ -22,7 +22,7 @@ class SimpleCrmServiceProvider extends ServiceProvider
                 if (! $this->migrationFileExists($key)) {
                     $this->publishes([
                         __DIR__ . "/../database/migrations/{$key}.stub" => database_path('migrations/' . date('Y_m_d_His', time()) . '_' . $key),
-                    ], 'migrations');
+                    ], 'simple-crm-migrations');
                 }
             }
         }
