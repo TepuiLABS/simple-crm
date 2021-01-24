@@ -39,7 +39,7 @@ class Lead extends Model
      */
     public function notes(): HasMany
     {
-        return $this->hasMany(\Tepuilabs\SimpleCrm\Models\Note::class);
+        return $this->hasMany(\App\Models\Tepuilabs\SimpleCrm\Note::class);
     }
 
     /**

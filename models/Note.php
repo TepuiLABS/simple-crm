@@ -33,7 +33,7 @@ class Note extends Model
 
     public function lead(): BelongsTo
     {
-        return $this->belongsTo(\Tepuilabs\SimpleCrm\Models\Lead::class);
+        return $this->belongsTo(\App\Models\Tepuilabs\SimpleCrm\Lead::class);
     }
 
     public static function getPriorities(): array
