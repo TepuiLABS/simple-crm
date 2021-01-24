@@ -10,7 +10,7 @@ class SimpleCrmServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../models' => base_path('Tepuilabs/SimpleCrm'),
+                __DIR__ . '/../models' => app_path('Models/Tepuilabs/SimpleCrm'),
             ], 'simple-crm-models');
 
             $migrationFileNames = [
