@@ -1,7 +1,7 @@
 <?php
 namespace Tepuilabs\SimpleCrm\Tests\Unit;
 
-use Tepuilabs\SimpleCrm\Models\Lead;
+use Tepuilabs\SimpleCrm\Tests\Models\Lead;
 use Tepuilabs\SimpleCrm\Tests\TestCase;
 
 class LeadTest extends TestCase

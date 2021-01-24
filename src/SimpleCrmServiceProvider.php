@@ -9,6 +9,10 @@ class SimpleCrmServiceProvider extends ServiceProvider
     public function boot(): void
     {
         if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../models' => base_path('Tepuilabs/SimpleCrm'),
+            ], 'models');
+
             $migrationFileNames = [
                 'create_leads_table.php',
                 'create_notes_table.php',

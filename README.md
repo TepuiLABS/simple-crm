@@ -24,6 +24,17 @@ php artisan vendor:publish --provider="Tepuilabs\SimpleCrm\SimpleCrmServiceProvi
 php artisan migrate
 ```
 
+## Usage
+
+This package uses a polymorphic relationship to associate the Items model with the model of your choice, the only thing you have to do is add this to the model you want to use:
+
+```php
+public function notes()
+{
+    return $this->morphMany(Note::class, 'author');
+}
+```
+
 ## Testing
 
 ```bash

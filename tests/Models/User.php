@@ -4,13 +4,11 @@ namespace Tepuilabs\SimpleCrm\Tests\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Tepuilabs\SimpleCrm\Traits\HasNote;
 
 class User extends Authenticatable
 {
     use HasFactory;
     use Notifiable;
-    use HasNote;
 
     /**
      * The attributes that are mass assignable.
@@ -41,4 +39,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function notes()
+    {
+        return $this->morphMany(\Tepuilabs\SimpleCrm\Tests\Models\Note::class, 'author');
+    }
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class LeadFactory extends Factory
 {
-    protected $model = \Tepuilabs\SimpleCrm\Models\Lead::class;
+    protected $model = \Tepuilabs\SimpleCrm\Tests\Models\Lead::class;
 
     const ORGANIC_TYPE = 'Organic';
     const USER_SUBMITTED_TYPE = 'User Submitted';

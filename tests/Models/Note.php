@@ -1,6 +1,5 @@
 <?php
-
-namespace Tepuilabs\SimpleCrm\Models;
+namespace Tepuilabs\SimpleCrm\Tests\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
