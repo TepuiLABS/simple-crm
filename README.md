@@ -35,9 +35,9 @@ php artisan migrate
 This package uses a polymorphic relationship to associate the Items model with the model of your choice, the only thing you have to do is add this to the model you want to use:
 
 ```php
-public function notes()
+public function notes(): MorphMany
 {
-    return $this->morphMany(Note::class, 'author');
+    return $this->morphMany(\App\Models\Tepuilabs\SimpleCrm\Note::class, 'author');
 }
 ```
 
