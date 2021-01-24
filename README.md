@@ -17,6 +17,12 @@ You can install the package via composer:
 composer require tepuilabs/simple-crm
 ```
 
+You can publish the modesl with:
+
+```bash
+php artisan vendor:publish --provider="Tepuilabs\SimpleCrm\SimpleCrmServiceProvider" --tag="models"
+```
+
 You can publish and run the migrations with:
 
 ```bash
