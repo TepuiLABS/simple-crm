@@ -9,7 +9,6 @@ class SimpleCrmServiceProvider extends ServiceProvider
     public function boot(): void
     {
         if ($this->app->runningInConsole()) {
-
             $this->publishes([
                 __DIR__ . '/../models' => app_path('Models/Tepuilabs/SimpleCrm'),
             ], 'simple-crm-models');
@@ -17,6 +16,7 @@ class SimpleCrmServiceProvider extends ServiceProvider
             $migrationFileNames = [
                 'create_leads_table.php',
                 'create_notes_table.php',
+                'create_services_table.php',
             ];
 
             foreach ($migrationFileNames as $key) {
