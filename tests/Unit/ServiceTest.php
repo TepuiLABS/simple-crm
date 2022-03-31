@@ -1,16 +1,10 @@
 <?php
 
-namespace Tepuilabs\SimpleCrm\Tests\Unit;
+use Tepuilabs\SimpleCrm\Models\Service;
 
-use Tepuilabs\SimpleCrm\Tests\TestCase;
+test('it can create services', function () {
 
-class ServiceTest extends TestCase
-{
-    /** @test */
-    public function test_it_can_create_services()
-    {
-        $service = \Tepuilabs\SimpleCrm\Tests\Models\Service::factory()->create();
+    $service = Service::factory()->create();
 
-        $this->assertInstanceOf(\Tepuilabs\SimpleCrm\Tests\Models\Service::class, $service);
-    }
-}
+    $this->assertInstanceOf(Service::class, $service);
+});

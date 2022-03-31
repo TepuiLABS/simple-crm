@@ -42,6 +42,6 @@ class User extends Authenticatable
 
     public function notes()
     {
-        return $this->morphMany(\Tepuilabs\SimpleCrm\Tests\Models\Note::class, 'author');
+        return $this->morphMany(\Tepuilabs\SimpleCrm\Models\Note::class, 'author');
     }
 }
