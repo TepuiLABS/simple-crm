@@ -1,32 +1,21 @@
 <?php
-namespace Tepuilabs\SimpleCrm\Tests\Unit;
 
-use Tepuilabs\SimpleCrm\Tests\Models\Lead;
-use Tepuilabs\SimpleCrm\Tests\TestCase;
+use Tepuilabs\SimpleCrm\Models\Lead;
 
-class LeadTest extends TestCase
-{
-    /** @test */
-    public function test_it_can_create_lead()
-    {
-        $lead = Lead::factory()->create();
+test('it can create lead', function () {
+    $lead = Lead::factory()->create();
 
-        $this->assertInstanceOf(Lead::class, $lead);
-    }
+    $this->assertInstanceOf(Lead::class, $lead);
+});
 
-    /** @test */
-    public function test_it_lead_status_is_prospect()
-    {
-        $lead = Lead::factory()->create(['status' => 'Prospect']);
+test('it can create a new lead as prospect', function () {
+    $lead = Lead::factory()->create(['status' => 'Prospect']);
 
-        $this->assertEquals('Prospect', $lead->status);
-    }
+    $this->assertEquals('Prospect', $lead->status);
+});
 
-    /** @test */
-    public function test_it_lead_type_is_organic()
-    {
-        $lead = Lead::factory()->create(['type' => 'Organic']);
+test('it can create a new lead as organic', function () {
+    $lead = Lead::factory()->create(['type' => 'Organic']);
 
-        $this->assertEquals('Organic', $lead->type);
-    }
-}
+    $this->assertEquals('Organic', $lead->type);
+});

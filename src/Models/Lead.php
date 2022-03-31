@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Tepuilabs\SimpleCrm;
+namespace Tepuilabs\SimpleCrm\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,12 +13,12 @@ class Lead extends Model
 {
     use HasFactory;
 
-    const ORGANIC_TYPE = 'Organic';
-    const USER_SUBMITTED_TYPE = 'User Submitted';
+    public const ORGANIC_TYPE = 'Organic';
+    public const USER_SUBMITTED_TYPE = 'User Submitted';
 
-    const PROSPECT_STATUS = 'Prospect';
-    const LEAD_STATUS = 'Lead';
-    const CUSTOMER_STATUS = 'Customer';
+    public const PROSPECT_STATUS = 'Prospect';
+    public const LEAD_STATUS = 'Lead';
+    public const CUSTOMER_STATUS = 'Customer';
 
     /**
      * The attributes that are mass assignable.

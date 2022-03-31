@@ -2,47 +2,24 @@
 
 namespace Tepuilabs\SimpleCrm;
 
-use Illuminate\Support\ServiceProvider;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class SimpleCrmServiceProvider extends ServiceProvider
+class SimpleCrmServiceProvider extends PackageServiceProvider
 {
-    public function boot(): void
+    public function configurePackage(Package $package): void
     {
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__ . '/../models' => app_path('Models/Tepuilabs/SimpleCrm'),
-            ], 'simple-crm-models');
-
-            $migrationFileNames = [
-                'create_leads_table.php',
-                'create_notes_table.php',
-                'create_services_table.php',
-            ];
-
-            foreach ($migrationFileNames as $key) {
-                if (! $this->migrationFileExists($key)) {
-                    $this->publishes([
-                        __DIR__ . "/../database/migrations/{$key}.stub" => database_path('migrations/' . date('Y_m_d_His', time()) . '_' . $key),
-                    ], 'simple-crm-migrations');
-                }
-            }
-        }
-    }
-
-    public function register(): void
-    {
-        //
-    }
-
-    public static function migrationFileExists(string $migrationFileName): bool
-    {
-        $len = strlen($migrationFileName);
-        foreach (glob(database_path("migrations/*.php")) as $filename) {
-            if ((substr($filename, -$len) === $migrationFileName)) {
-                return true;
-            }
-        }
-
-        return false;
+        /*
+         * This class is a Package Service Provider
+         *
+         * More info: https://github.com/spatie/laravel-package-tools
+         */
+        $package
+            ->name('simple-crm')
+            ->hasMigrations([
+                'create_leads_table',
+                'create_notes_table',
+                'create_services_table',
+            ]);
     }
 }

@@ -1,23 +1,18 @@
 <?php
-namespace Tepuilabs\SimpleCrm\Tests\Unit;
 
-use Tepuilabs\SimpleCrm\Tests\TestCase;
+use Tepuilabs\SimpleCrm\Models\Lead;
+use Tepuilabs\SimpleCrm\Models\Note;
 
-class NoteTest extends TestCase
-{
-    /** @test */
-    public function test_it_user_can_create_a_note()
-    {
-        $user = \Tepuilabs\SimpleCrm\Tests\Models\User::factory()->create();
-        $lead = \Tepuilabs\SimpleCrm\Tests\Models\Lead::factory()->create();
+test('if a user can create a note', function () {
+    $user = \Tepuilabs\SimpleCrm\Tests\Models\User::factory()->create();
+    $lead = Lead::factory()->create();
 
-        $note = $user->notes()->create([
-            'priority' => 'Low',
-            'title' => 'Some title',
-            'body' => 'Some body',
-            'lead_id' => $lead->id,
-        ]);
+    $note = $user->notes()->create([
+        'priority' => 'Low',
+        'title' => 'Some title',
+        'body' => 'Some body',
+        'lead_id' => $lead->id,
+    ]);
 
-        $this->assertInstanceOf(\Tepuilabs\SimpleCrm\Tests\Models\Note::class, $note);
-    }
-}
+    $this->assertInstanceOf(Note::class, $note);
+});

@@ -11,7 +11,7 @@ class ServiceFactory extends Factory
      *
      * @var string
      */
-    protected $model = \Tepuilabs\SimpleCrm\Tests\Models\Service::class;
+    protected $model =  \Tepuilabs\SimpleCrm\Models\Service::class;
 
     /**
      * Define the model's default state.
