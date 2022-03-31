@@ -13,12 +13,12 @@ class Lead extends Model
 {
     use HasFactory;
 
-    const ORGANIC_TYPE = 'Organic';
-    const USER_SUBMITTED_TYPE = 'User Submitted';
+    public const ORGANIC_TYPE = 'Organic';
+    public const USER_SUBMITTED_TYPE = 'User Submitted';
 
-    const PROSPECT_STATUS = 'Prospect';
-    const LEAD_STATUS = 'Lead';
-    const CUSTOMER_STATUS = 'Customer';
+    public const PROSPECT_STATUS = 'Prospect';
+    public const LEAD_STATUS = 'Lead';
+    public const CUSTOMER_STATUS = 'Customer';
 
     /**
      * The attributes that are mass assignable.

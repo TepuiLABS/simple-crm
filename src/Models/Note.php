@@ -11,9 +11,9 @@ class Note extends Model
 {
     use HasFactory;
 
-    const LOW_PRIORITY = 'Low';
-    const MEDIUM_PRIORITY = 'Medium';
-    const HIGH_PRIORITY = 'High';
+    public const LOW_PRIORITY = 'Low';
+    public const MEDIUM_PRIORITY = 'Medium';
+    public const HIGH_PRIORITY = 'High';
 
     /**
      * The attributes that are mass assignable.
