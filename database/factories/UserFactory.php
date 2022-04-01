@@ -10,9 +10,10 @@ class UserFactory extends Factory
     /**
      * The name of the factory's corresponding model.
      *
-     * @var string
+     * @var class-string<\Illuminate\Database\Eloquent\Model>
      */
     protected $model = \Tepuilabs\SimpleCrm\Tests\Models\User::class;
+
 
     /**
      * Define the model's default state.

@@ -18,7 +18,7 @@ class Note extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $fillable = [
         'priority',
@@ -33,7 +33,7 @@ class Note extends Model
 
     public function lead(): BelongsTo
     {
-        return $this->belongsTo(\App\Models\Tepuilabs\SimpleCrm\Lead::class);
+        return $this->belongsTo(\Tepuilabs\SimpleCrm\Models\Lead::class);
     }
 
     public static function getPriorities(): array

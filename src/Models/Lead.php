@@ -23,7 +23,7 @@ class Lead extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $fillable = [
         'name',
@@ -39,7 +39,7 @@ class Lead extends Model
      */
     public function notes(): HasMany
     {
-        return $this->hasMany(\App\Models\Tepuilabs\SimpleCrm\Note::class);
+        return $this->hasMany(\Tepuilabs\SimpleCrm\Models\Note::class);
     }
 
     /**

@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class NoteFactory extends Factory
 {
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var class-string<\Illuminate\Database\Eloquent\Model>
+     */
     protected $model = \Tepuilabs\SimpleCrm\Models\Note::class;
 
     const LOW_PRIORITY = 'Low';
@@ -14,6 +19,11 @@ class NoteFactory extends Factory
     const HIGH_PRIORITY = 'High';
 
 
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
     public function definition()
     {
         $author = \Tepuilabs\SimpleCrm\Tests\Models\User::factory()->create();
