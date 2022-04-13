@@ -8,14 +8,16 @@ test('it can create lead', function () {
     $this->assertInstanceOf(Lead::class, $lead);
 });
 
-test('it can create a new lead as prospect', function () {
-    $lead = Lead::factory()->create(['status' => 'Prospect']);
+test('it can create a new lead as statusProspect typeOrganic', function () {
+    $lead = Lead::factory()->statusProspect()->typeOrganic()->create();
 
-    $this->assertEquals('Prospect', $lead->status);
+    expect($lead->type->types())->toBe('organic');
+    expect($lead->status->status())->toBe('prospect');
 });
 
-test('it can create a new lead as organic', function () {
-    $lead = Lead::factory()->create(['type' => 'Organic']);
+test('it can create a new lead as typeUserSubmitted statusLead', function () {
+    $lead = Lead::factory()->typeUserSubmitted()->statusLead()->create();
 
-    $this->assertEquals('Organic', $lead->type);
+    expect($lead->type->types())->toBe('user submitted');
+    expect($lead->status->status())->toBe('lead');
 });

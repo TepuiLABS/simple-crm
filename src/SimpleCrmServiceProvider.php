@@ -20,6 +20,7 @@ class SimpleCrmServiceProvider extends PackageServiceProvider
                 'create_leads_table',
                 'create_notes_table',
                 'create_services_table',
+                'create_projects_table',
             ]);
     }
 }

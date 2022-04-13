@@ -33,6 +33,7 @@ public function notes(): MorphMany
 {
     return $this->morphMany(\Tepuilabs\SimpleCrm\Models\Note::class, 'author');
 }
+
 ```
 
 ## Testing
