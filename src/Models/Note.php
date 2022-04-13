@@ -24,7 +24,7 @@ class Note extends Model
     ];
 
     protected $casts = [
-        'priority' => NoteStatus::class
+        'priority' => NoteStatus::class,
     ];
 
     public function author(): MorphTo

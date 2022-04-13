@@ -13,7 +13,6 @@ use Spatie\Enum\Laravel\Enum;
  */
 class LeadStatus extends Enum
 {
-
     public function types(): string
     {
         return match ($this->value) {

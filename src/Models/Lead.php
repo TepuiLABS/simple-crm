@@ -2,10 +2,10 @@
 
 namespace Tepuilabs\SimpleCrm\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Tepuilabs\SimpleCrm\Models\Enums\LeadStatus;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Tepuilabs\SimpleCrm\Models\Enums\LeadStatus;
 
 /**
  * @url https://www.hipb2b.com/blog/lead-prospect-whats-difference
@@ -29,7 +29,7 @@ class Lead extends Model
     protected $casts = [
         'status' => LeadStatus::class,
         'type' => LeadStatus::class,
-	];
+    ];
 
     /**
      * Notes relationship
