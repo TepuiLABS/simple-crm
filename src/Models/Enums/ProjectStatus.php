@@ -4,7 +4,6 @@ namespace Tepuilabs\SimpleCrm\Models\Enums;
 
 use Spatie\Enum\Laravel\Enum;
 
-
 /**
  * @method static self OPEN()
  * @method static self CANCELED()
@@ -14,7 +13,6 @@ use Spatie\Enum\Laravel\Enum;
  */
 class ProjectStatus extends Enum
 {
-
     public function status(): string
     {
         return match ($this->value) {

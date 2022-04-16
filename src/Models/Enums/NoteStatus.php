@@ -4,7 +4,6 @@ namespace Tepuilabs\SimpleCrm\Models\Enums;
 
 use Spatie\Enum\Laravel\Enum;
 
-
 /**
  * @method static self LOW_PRIORITY()
  * @method static self MEDIUM_PRIORITY()
@@ -12,7 +11,6 @@ use Spatie\Enum\Laravel\Enum;
  */
 class NoteStatus extends Enum
 {
-
     public function priority(): string
     {
         return match ($this->value) {

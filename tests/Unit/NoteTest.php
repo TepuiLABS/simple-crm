@@ -13,7 +13,7 @@ test('if a user can create a note', function () {
         'title' => 'Some title',
         'body' => 'Some body',
         'lead_id' => $lead->id,
-        'priority' => NoteStatus::LOW_PRIORITY()
+        'priority' => NoteStatus::LOW_PRIORITY(),
     ]);
 
     $this->assertInstanceOf(Note::class, $note);

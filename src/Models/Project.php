@@ -2,11 +2,11 @@
 
 namespace Tepuilabs\SimpleCrm\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Tepuilabs\SimpleCrm\Models\Enums\ProjectStatus;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Tepuilabs\SimpleCrm\Models\Enums\ProjectStatus;
 
 class Project extends Model
 {
@@ -21,7 +21,7 @@ class Project extends Model
         'title',
         'description',
         'deadline',
-        'status'
+        'status',
     ];
 
     protected $casts = [
