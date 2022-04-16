@@ -2,11 +2,11 @@
 
 namespace Tepuilabs\SimpleCrm\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Tepuilabs\SimpleCrm\Models\Enums\LeadStatus;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Tepuilabs\SimpleCrm\Models\Enums\LeadStatus;
 
 /**
  * @url https://www.hipb2b.com/blog/lead-prospect-whats-difference
