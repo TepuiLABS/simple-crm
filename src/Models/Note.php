@@ -32,6 +32,11 @@ class Note extends Model
         return $this->morphTo();
     }
 
+    public function commentable(): MorphTo
+    {
+        return $this->morphTo();
+    }
+
     public function lead(): BelongsTo
     {
         return $this->belongsTo(\Tepuilabs\SimpleCrm\Models\Lead::class);
