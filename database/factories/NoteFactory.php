@@ -3,29 +3,52 @@
 namespace Tepuilabs\SimpleCrm\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Tepuilabs\SimpleCrm\Models\Enums\Note\NotePriority;
+use Tepuilabs\SimpleCrm\Models\Note;
 
 
 class NoteFactory extends Factory
 {
-    protected $model = \Tepuilabs\SimpleCrm\Models\Note::class;
+    /**
+     * {@inheritdoc}
+     */
+    protected $model = Note::class;
 
-    const LOW_PRIORITY = 'Low';
-    const MEDIUM_PRIORITY = 'Medium';
-    const HIGH_PRIORITY = 'High';
-
-
+    /**
+     * {@inheritdoc}
+     */
     public function definition()
     {
-        $author = \Tepuilabs\SimpleCrm\Tests\Models\User::factory()->create();
-        $lead = \Tepuilabs\SimpleCrm\Models\Lead::factory()->create();
+        $author = User::factory()->create();
+        $lead = Lead::factory()->create();
 
         return [
-            'priority' => $this->faker->randomElement([self::LOW_PRIORITY, self::MEDIUM_PRIORITY, self::HIGH_PRIORITY]),
             'title' => $this->faker->sentence($nbWords = 6, $variableNbWords = true),
             'body' => $this->faker->paragraphs($nb = 3, $asText = false),
             'lead_id' => $lead->id,
             'author_id' => $author->id,
             'author_type' => \Tepuilabs\SimpleCrm\Tests\Models\User::class,
         ];
+    }
+
+    public function lowPriority(): NoteFactory
+    {
+        return $this->state([
+            'priority' => NotePriority::LOW_PRIORITY()
+        ]);
+    }
+
+    public function mediumPriority(): NoteFactory
+    {
+        return $this->state([
+            'priority' => NotePriority::MEDIUM_PRIORITY()
+        ]);
+    }
+
+    public function highPriority(): NoteFactory
+    {
+        return $this->state([
+            'priority' => NotePriority::HIGH_PRIORITY()
+        ]);
     }
 }

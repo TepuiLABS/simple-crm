@@ -1,24 +1,24 @@
 <?php
 
+use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadStatus;
+use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadType;
 use Tepuilabs\SimpleCrm\Models\Lead;
 
-test('it can create lead', function () {
-
-    $lead = Lead::factory()->create();
-
-    $this->assertInstanceOf(Lead::class, $lead);
+beforeEach(function () {
+    $this->lead = Lead::factory()
+        ->organicType()
+        ->leadStatus()
+        ->create();
 });
 
-test('it can create a new lead as prospect', function () {
+test('it can create lead', function () {
+    $this->assertInstanceOf(Lead::class, $this->lead);
+});
 
-    $lead = Lead::factory()->create(['status' => 'Prospect']);
-
-    $this->assertEquals('Prospect', $lead->status);
+test('it can create a new lead', function () {
+    $this->assertEquals(LeadStatus::LEAD_STATUS(), $this->lead->status);
 });
 
 test('it can create a new lead as organic', function () {
-
-    $lead = Lead::factory()->create(['type' => 'Organic']);
-
-    $this->assertEquals('Organic', $lead->type);
+    $this->assertEquals(LeadType::ORGANIC_TYPE(), $this->lead->type);
 });

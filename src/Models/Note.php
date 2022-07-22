@@ -6,24 +6,26 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Tepuilabs\SimpleCrm\Models\Enums\Note\NotePriority;
 
 class Note extends Model
 {
     use HasFactory;
 
-    const LOW_PRIORITY = 'Low';
-    const MEDIUM_PRIORITY = 'Medium';
-    const HIGH_PRIORITY = 'High';
-
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
+     * {@inheritdoc}
      */
     protected $fillable = [
         'priority',
         'title',
         'body',
+    ];
+
+    /**
+     * {@inheritdoc}
+     */
+    protected $casts = [
+        'priority' => NotePriority::class,
     ];
 
     public function author(): MorphTo
@@ -33,15 +35,6 @@ class Note extends Model
 
     public function lead(): BelongsTo
     {
-        return $this->belongsTo(\App\Models\Tepuilabs\SimpleCrm\Lead::class);
-    }
-
-    public static function getPriorities(): array
-    {
-        return [
-            self::LOW_PRIORITY => self::LOW_PRIORITY,
-            self::MEDIUM_PRIORITY => self::MEDIUM_PRIORITY,
-            self::HIGH_PRIORITY => self::HIGH_PRIORITY,
-        ];
+        return $this->belongsTo(Lead::class);
     }
 }

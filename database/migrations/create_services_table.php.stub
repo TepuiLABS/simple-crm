@@ -17,7 +17,7 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->text('description')->nullable();
-            $table->enum('status', ['published', 'draft'])->default('draft');
+            $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('DRAFT');
             $table->timestamps();
             $table->softDeletes();
         });

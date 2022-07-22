@@ -4,6 +4,7 @@ namespace Tepuilabs\SimpleCrm\Tests\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Tepuilabs\SimpleCrm\Models\Note;
 
 class User extends Authenticatable
 {
@@ -42,6 +43,6 @@ class User extends Authenticatable
 
     public function notes()
     {
-        return $this->morphMany(\Tepuilabs\SimpleCrm\Models\Note::class, 'author');
+        return $this->morphMany(Note::class, 'author');
     }
 }
