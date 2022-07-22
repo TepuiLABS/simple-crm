@@ -2,11 +2,10 @@
 
 use Tepuilabs\SimpleCrm\Models\Enums\Note\NotePriority;
 use Tepuilabs\SimpleCrm\Models\Lead;
-use \Tepuilabs\SimpleCrm\Models\Note;
+use Tepuilabs\SimpleCrm\Models\Note;
 use Tepuilabs\SimpleCrm\Tests\Models\User;
 
 beforeEach(function () {
-
     $this->user = User::factory()->create();
     $this->lead = Lead::factory()
         ->organicType()
@@ -18,7 +17,6 @@ beforeEach(function () {
         'body' => 'Some body',
         'lead_id' => $this->lead->id,
     ]);
-
 });
 
 test('if a user can create a note', function () {

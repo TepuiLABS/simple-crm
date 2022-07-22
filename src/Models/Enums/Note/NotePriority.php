@@ -1,4 +1,5 @@
 <?php
+
 namespace Tepuilabs\SimpleCrm\Models\Enums\Note;
 
 use Spatie\Enum\Laravel\Enum;
