@@ -4,18 +4,15 @@ namespace Tepuilabs\SimpleCrm\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Tepuilabs\SimpleCrm\Models\Enums\NoteStatus;
+use Tepuilabs\SimpleCrm\Models\Enums\Note\NotePriority;
 
 class Note extends Model
 {
     use HasFactory;
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
+     * {@inheritdoc}
      */
     protected $fillable = [
         'title',
@@ -23,22 +20,15 @@ class Note extends Model
         'priority',
     ];
 
+    /**
+     * {@inheritdoc}
+     */
     protected $casts = [
-        'priority' => NoteStatus::class,
+        'priority' => NotePriority::class,
     ];
-
-    public function author(): MorphTo
-    {
-        return $this->morphTo();
-    }
 
     public function commentable(): MorphTo
     {
         return $this->morphTo();
-    }
-
-    public function lead(): BelongsTo
-    {
-        return $this->belongsTo(\Tepuilabs\SimpleCrm\Models\Lead::class);
     }
 }

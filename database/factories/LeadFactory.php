@@ -2,71 +2,58 @@
 
 namespace Tepuilabs\SimpleCrm\Database\Factories;
 
-use Illuminate\Database\Eloquent\Model;
-use Tepuilabs\SimpleCrm\Models\Enums\LeadStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadStatus;
+use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadType;
 use Tepuilabs\SimpleCrm\Models\Lead;
 
 class LeadFactory extends Factory
 {
     /**
-     * The name of the factory's corresponding model.
-     *
-     * @var class-string<Model>
+     * {@inheritdoc}
      */
     protected $model = Lead::class;
 
     /**
-     * Define the model's default state.
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    public function definition(): array
+    public function definition()
     {
         return [
             'name' => $this->faker->name,
             'email' => $this->faker->email,
-            'type' => $this->faker->randomElement([
-                LeadStatus::ORGANIC_TYPE(),
-                LeadStatus::USER_SUBMITTED_TYPE(),
-            ]),
-            'status' => $this->faker->randomElement([
-                LeadStatus::PROSPECT_STATUS(),
-                LeadStatus::LEAD_STATUS(),
-                LeadStatus::CUSTOMER_STATUS(),
-            ]),
         ];
     }
 
-    public function typeOrganic()
+    public function organicType(): LeadFactory
     {
         return $this->state([
-            'type' => LeadStatus::ORGANIC_TYPE()
+            'type' => LeadType::ORGANIC_TYPE(),
         ]);
     }
 
-    public function typeUserSubmitted()
+    public function userSubmittedType(): LeadFactory
     {
         return $this->state([
-            'type' => LeadStatus::USER_SUBMITTED_TYPE()
+            'type' => LeadType::USER_SUBMITTED_TYPE(),
         ]);
     }
 
-    public function statusProspect()
-    {
-        return $this->state([
-            'status' => LeadStatus::PROSPECT_STATUS()
-        ]);
-    }
-
-    public function statusLead()
+    public function leadStatus(): LeadFactory
     {
         return $this->state([
             'status' => LeadStatus::LEAD_STATUS()
         ]);
     }
 
-    public function statusCustomer()
+    public function prospectStatus(): LeadFactory
+    {
+        return $this->state([
+            'status' => LeadStatus::PROSPECT_STATUS()
+        ]);
+    }
+
+    public function customerStatus(): LeadFactory
     {
         return $this->state([
             'status' => LeadStatus::CUSTOMER_STATUS()

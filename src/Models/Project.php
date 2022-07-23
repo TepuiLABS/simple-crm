@@ -30,11 +30,11 @@ class Project extends Model
 
     public function lead(): BelongsTo
     {
-        return $this->belongsTo(\Tepuilabs\SimpleCrm\Models\Lead::class);
+        return $this->belongsTo(Lead::class);
     }
 
     public function notes(): MorphMany
     {
-        return $this->morphMany(\Tepuilabs\SimpleCrm\Models\Note::class, 'commentable');
+        return $this->morphMany(Note::class, 'commentable');
     }
 }

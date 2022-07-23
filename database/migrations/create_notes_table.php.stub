@@ -20,6 +20,10 @@ class CreateNotesTable extends Migration
             $table->text('priority');
             $table->nullableMorphs('commentable');
             $table->nullableMorphs('author');
+            $table->foreignId('parent_id')
+                ->nullable()
+                ->constrained('comments')
+                ->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });
