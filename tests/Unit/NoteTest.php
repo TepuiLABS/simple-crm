@@ -3,11 +3,10 @@
 <<<<<<< HEAD
 use Tepuilabs\SimpleCrm\Models\Enums\Note\NotePriority;
 use Tepuilabs\SimpleCrm\Models\Lead;
-use \Tepuilabs\SimpleCrm\Models\Note;
+use Tepuilabs\SimpleCrm\Models\Note;
 use Tepuilabs\SimpleCrm\Tests\Models\User;
 
 beforeEach(function () {
-
     $this->user = User::factory()->create();
     $this->lead = Lead::factory()
         ->organicType()
@@ -35,7 +34,6 @@ test('if a user can create a note', function () {
         'priority' => NoteStatus::LOW_PRIORITY(),
 >>>>>>> master
     ]);
-
 });
 
 test('if a user can create a note', function () {
