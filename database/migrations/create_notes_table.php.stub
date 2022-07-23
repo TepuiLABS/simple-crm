@@ -22,7 +22,7 @@ class CreateNotesTable extends Migration
             $table->nullableMorphs('author');
             $table->foreignId('parent_id')
                 ->nullable()
-                ->constrained('comments')
+                ->constrained('notes')
                 ->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
