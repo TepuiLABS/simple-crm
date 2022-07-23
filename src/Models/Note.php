@@ -27,7 +27,6 @@ class Note extends Model
         'priority' => NotePriority::class,
     ];
 
-
     public function commentable(): MorphTo
     {
         return $this->morphTo();
