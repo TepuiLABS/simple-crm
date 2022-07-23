@@ -4,13 +4,11 @@ namespace Tepuilabs\SimpleCrm\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadStatus;
 use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadType;
 
-/**
- * @url https://www.hipb2b.com/blog/lead-prospect-whats-difference
- */
+
 class Lead extends Model
 {
     use HasFactory;
@@ -34,12 +32,10 @@ class Lead extends Model
     ];
 
     /**
-     * Notes relationship
-     *
-     * @return HasMany
+     * @return MorphMany
      */
-    public function notes(): HasMany
+    public function notes(): MorphMany
     {
-        return $this->hasMany(Note::class);
+        return $this->morphMany(Note::class, 'commentable');
     }
 }

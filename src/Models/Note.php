@@ -4,7 +4,6 @@ namespace Tepuilabs\SimpleCrm\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Tepuilabs\SimpleCrm\Models\Enums\Note\NotePriority;
 
@@ -16,9 +15,9 @@ class Note extends Model
      * {@inheritdoc}
      */
     protected $fillable = [
-        'priority',
         'title',
         'body',
+        'priority',
     ];
 
     /**
@@ -28,13 +27,9 @@ class Note extends Model
         'priority' => NotePriority::class,
     ];
 
-    public function author(): MorphTo
+
+    public function commentable(): MorphTo
     {
         return $this->morphTo();
-    }
-
-    public function lead(): BelongsTo
-    {
-        return $this->belongsTo(Lead::class);
     }
 }

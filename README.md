@@ -17,12 +17,6 @@ You can install the package via composer:
 composer require tepuilabs/simple-crm
 ```
 
-You can publish the modesl with:
-
-```bash
-php artisan vendor:publish --provider="Tepuilabs\SimpleCrm\SimpleCrmServiceProvider" --tag="simple-crm-models"
-```
-
 You can publish and run the migrations with:
 
 ```bash
@@ -37,8 +31,9 @@ This package uses a polymorphic relationship to associate the Items model with t
 ```php
 public function notes(): MorphMany
 {
-    return $this->morphMany(\App\Models\Tepuilabs\SimpleCrm\Note::class, 'author');
+    return $this->morphMany(\Tepuilabs\SimpleCrm\Models\Note::class, 'author');
 }
+
 ```
 
 ## Testing

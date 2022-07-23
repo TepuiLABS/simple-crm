@@ -7,7 +7,6 @@ use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadStatus;
 use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadType;
 use Tepuilabs\SimpleCrm\Models\Lead;
 
-
 class LeadFactory extends Factory
 {
     /**

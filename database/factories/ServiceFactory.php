@@ -3,7 +3,6 @@
 namespace Tepuilabs\SimpleCrm\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Model;
 use Tepuilabs\SimpleCrm\Models\Enums\StatusEnum;
 use Tepuilabs\SimpleCrm\Models\Service;
 
@@ -17,7 +16,7 @@ class ServiceFactory extends Factory
     /**
      * {@inheritdoc}
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             'name' => $this->faker->sentence(6, true),
