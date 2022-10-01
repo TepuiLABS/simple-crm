@@ -23,6 +23,7 @@ class NoteFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'body' => $this->faker->paragraph,
+            'priority' => $this->faker->randomElement(NotePriority::values()),
         ];
     }
 
