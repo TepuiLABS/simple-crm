@@ -33,9 +33,8 @@ it('a note has low priority', function () {
 it('can get the commentable of a note', function () {
     expect($this->note->commentable)
         ->toBeInstanceOf(Lead::class)
-        ->and($this->note->commentable->id)
-        ->toBe($this->lead->id)
-        ->and($this->note->commentable->name)
-        ->toBe($this->lead->name);
+        ->and($this->note->commentable)
+        ->id->toEqual($this->lead->id)
+        ->name->toEqual($this->lead->name);
 });
 

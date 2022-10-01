@@ -22,6 +22,8 @@ class LeadFactory extends Factory
         return [
             'name' => $this->faker->name,
             'email' => $this->faker->email,
+            'type' => $this->faker->randomElement(LeadType::values()),
+            'status' => $this->faker->randomElement(LeadStatus::values()),
         ];
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tepuilabs\SimpleCrm\Enums;
+namespace Tepuilabs\SimpleCrm\Enums\Project;
 
 use Datomatic\EnumHelper\EnumHelper;
 
