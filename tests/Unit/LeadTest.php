@@ -2,6 +2,7 @@
 
 use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertInstanceOf;
+
 use Tepuilabs\SimpleCrm\Enums\Lead\LeadStatus;
 use Tepuilabs\SimpleCrm\Enums\Lead\LeadType;
 use Tepuilabs\SimpleCrm\Models\Lead;

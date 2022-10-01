@@ -2,6 +2,7 @@
 
 use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertInstanceOf;
+
 use Tepuilabs\SimpleCrm\Enums\Note\NotePriority;
 use Tepuilabs\SimpleCrm\Models\Lead;
 use Tepuilabs\SimpleCrm\Models\Note;
