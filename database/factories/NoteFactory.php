@@ -9,12 +9,16 @@ use Tepuilabs\SimpleCrm\Models\Note;
 class NoteFactory extends Factory
 {
     /**
-     * {@inheritdoc}
+     * The name of the factory's corresponding model.
+     *
+     * @var class-string<\Illuminate\Database\Eloquent\Model>
      */
     protected $model = Note::class;
 
     /**
-     * {@inheritdoc}
+     * Define the model's default state.
+     *
+     * @return array
      */
     public function definition()
     {
@@ -25,21 +29,36 @@ class NoteFactory extends Factory
         ];
     }
 
-    public function lowPriority(): NoteFactory
+    /**
+     * Indicate that the note priority is low.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function lowPriority(): Factory
     {
         return $this->state([
             'priority' => NotePriority::LOW_PRIORITY(),
         ]);
     }
 
-    public function mediumPriority(): NoteFactory
+    /**
+     * Indicate that the note priority is medium.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function mediumPriority(): Factory
     {
         return $this->state([
             'priority' => NotePriority::MEDIUM_PRIORITY(),
         ]);
     }
 
-    public function highPriority(): NoteFactory
+    /**
+     * Indicate that the note priority is high.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function highPriority(): Factory
     {
         return $this->state([
             'priority' => NotePriority::HIGH_PRIORITY(),

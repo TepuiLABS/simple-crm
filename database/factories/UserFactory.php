@@ -3,7 +3,6 @@
 namespace Tepuilabs\SimpleCrm\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Tepuilabs\SimpleCrm\Tests\Models\User;
 
@@ -12,7 +11,7 @@ class UserFactory extends Factory
     /**
      * The name of the factory's corresponding model.
      *
-     * @var class-string<Model>
+     * @var class-string<\Illuminate\Database\Eloquent\Model>
      */
     protected $model = User::class;
 

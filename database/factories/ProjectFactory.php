@@ -3,7 +3,6 @@
 namespace Tepuilabs\SimpleCrm\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Model;
 use Tepuilabs\SimpleCrm\Enums\Project\ProjectStatus;
 use Tepuilabs\SimpleCrm\Models\Project;
 
@@ -12,7 +11,7 @@ class ProjectFactory extends Factory
     /**
      * The name of the factory's corresponding model.
      *
-     * @var class-string<Model>
+     * @var class-string<\Illuminate\Database\Eloquent\Model>
      */
     protected $model = Project::class;
 
@@ -31,35 +30,60 @@ class ProjectFactory extends Factory
         ];
     }
 
-    public function statusOpen()
+    /**
+     * Indicate that the project status is open.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function statusOpen(): Factory
     {
         return $this->state([
             'status' => ProjectStatus::OPEN(),
         ]);
     }
 
-    public function statusCanceled()
+    /**
+     * Indicate that the project status is canceled.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function statusCanceled(): Factory
     {
         return $this->state([
             'status' => ProjectStatus::CANCELED(),
         ]);
     }
 
-    public function statusWip()
+    /**
+     * Indicate that the project status is work in progress.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function statusWip(): Factory
     {
         return $this->state([
             'status' => ProjectStatus::WIP(),
         ]);
     }
 
-    public function statusBlocked()
+    /**
+     * Indicate that the project status is blocked.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function statusBlocked(): Factory
     {
         return $this->state([
             'status' => ProjectStatus::BLOCKED(),
         ]);
     }
 
-    public function statusCompleted()
+    /**
+     * Indicate that the project status is completed.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function statusCompleted(): Factory
     {
         return $this->state([
             'status' => ProjectStatus::COMPLETED(),

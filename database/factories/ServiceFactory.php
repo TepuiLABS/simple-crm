@@ -9,12 +9,16 @@ use Tepuilabs\SimpleCrm\Models\Service;
 class ServiceFactory extends Factory
 {
     /**
-     * {@inheritdoc}
+     * The name of the factory's corresponding model.
+     *
+     * @var class-string<\Illuminate\Database\Eloquent\Model>
      */
     protected $model = Service::class;
 
     /**
-     * {@inheritdoc}
+     * Define the model's default state.
+     *
+     * @return array
      */
     public function definition(): array
     {
