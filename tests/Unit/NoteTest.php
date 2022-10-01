@@ -1,12 +1,11 @@
 <?php
 
+use function PHPUnit\Framework\assertEquals;
+use function PHPUnit\Framework\assertInstanceOf;
 use Tepuilabs\SimpleCrm\Enums\Note\NotePriority;
 use Tepuilabs\SimpleCrm\Models\Lead;
 use Tepuilabs\SimpleCrm\Models\Note;
 use Tepuilabs\SimpleCrm\Tests\Models\User;
-
-use function PHPUnit\Framework\assertEquals;
-use function PHPUnit\Framework\assertInstanceOf;
 
 beforeEach(function () {
     $this->user = User::factory()->create();
@@ -37,4 +36,3 @@ it('can get the commentable of a note', function () {
         ->id->toEqual($this->lead->id)
         ->name->toEqual($this->lead->name);
 });
-

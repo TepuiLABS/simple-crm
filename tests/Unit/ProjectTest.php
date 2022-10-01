@@ -20,9 +20,7 @@ it('project lead can be obtained', function () {
 });
 
 it('project notes can be obtained')
-    ->expect(fn() => $this->project->notes)
+    ->expect(fn () => $this->project->notes)
     ->toBeInstanceOf(Collection::class)
-    ->and(fn() => $this->project->notes->count())
+    ->and(fn () => $this->project->notes->count())
     ->toBe(3);
-
-

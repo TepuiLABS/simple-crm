@@ -15,7 +15,7 @@ class Project extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var array<string>
      */
     protected $fillable = [
         'title',
@@ -24,15 +24,30 @@ class Project extends Model
         'status',
     ];
 
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array<string, string>
+     */
     protected $casts = [
         'status' => ProjectStatus::class,
     ];
 
+    /**
+     * Get the lead of the project record.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function lead(): BelongsTo
     {
         return $this->belongsTo(Lead::class);
     }
 
+    /**
+     * Get all of the project's notes.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
     public function notes(): MorphMany
     {
         return $this->morphMany(Note::class, 'commentable');

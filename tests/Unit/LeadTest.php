@@ -1,12 +1,11 @@
 <?php
 
+use function PHPUnit\Framework\assertEquals;
+use function PHPUnit\Framework\assertInstanceOf;
 use Tepuilabs\SimpleCrm\Enums\Lead\LeadStatus;
 use Tepuilabs\SimpleCrm\Enums\Lead\LeadType;
 use Tepuilabs\SimpleCrm\Models\Lead;
 use Tepuilabs\SimpleCrm\Models\Note;
-
-use function PHPUnit\Framework\assertEquals;
-use function PHPUnit\Framework\assertInstanceOf;
 
 beforeEach(function () {
     $this->lead = Lead::factory()
@@ -34,4 +33,3 @@ it('lead notes can be obtained', function () {
         ->and($this->lead->notes->first())
         ->toBeInstanceOf(Note::class);
 });
-

@@ -12,7 +12,9 @@ class Note extends Model
     use HasFactory;
 
     /**
-     * {@inheritdoc}
+     * The attributes that are mass assignable.
+     *
+     * @var array<string>
      */
     protected $fillable = [
         'title',
@@ -21,17 +23,29 @@ class Note extends Model
     ];
 
     /**
-     * {@inheritdoc}
+     * The attributes that should be cast to native types.
+     *
+     * @var array<string, string>
      */
     protected $casts = [
         'priority' => NotePriority::class,
     ];
 
+    /**
+     * Get the parent of the note record.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+     */
     public function commentable(): MorphTo
     {
         return $this->morphTo();
     }
 
+    /**
+     * Get the author of the note record.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphTo
+     */
     public function author(): MorphTo
     {
         return $this->morphTo();
