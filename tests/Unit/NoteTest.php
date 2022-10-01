@@ -5,24 +5,37 @@ use Tepuilabs\SimpleCrm\Models\Lead;
 use Tepuilabs\SimpleCrm\Models\Note;
 use Tepuilabs\SimpleCrm\Tests\Models\User;
 
+use function PHPUnit\Framework\assertEquals;
+use function PHPUnit\Framework\assertInstanceOf;
+
 beforeEach(function () {
     $this->user = User::factory()->create();
     $this->lead = Lead::factory()
         ->organicType()
-        ->leadStatus()->create();
+        ->leadStatus()
+        ->create();
 
-    $this->note = $this->user->notes()->create([
-        'priority' => NotePriority::LOW_PRIORITY(),
-        'title' => 'Some title',
-        'body' => 'Some body',
-        'lead_id' => $this->lead->id,
-    ]);
+    $this->note = Note::factory()
+        ->lowPriority()
+        ->for($this->user, 'author')
+        ->for($this->lead, 'commentable')
+        ->create();
 });
 
-test('if a user can create a note', function () {
-    $this->assertInstanceOf(Note::class, $this->note);
+it('a user can create a note', function () {
+    assertInstanceOf(Note::class, $this->note);
 });
 
-test('if note has low priority', function () {
-    $this->assertEquals(NotePriority::LOW_PRIORITY(), $this->note->priority->value);
+it('a note has low priority', function () {
+    assertEquals(NotePriority::LOW_PRIORITY(), $this->note->priority->value);
 });
+
+it('can get the commentable of a note', function () {
+    expect($this->note->commentable)
+        ->toBeInstanceOf(Lead::class)
+        ->and($this->note->commentable->id)
+        ->toBe($this->lead->id)
+        ->and($this->note->commentable->name)
+        ->toBe($this->lead->name);
+});
+

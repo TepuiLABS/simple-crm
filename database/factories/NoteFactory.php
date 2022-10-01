@@ -20,15 +20,9 @@ class NoteFactory extends Factory
      */
     public function definition()
     {
-        $author = User::factory()->create();
-        $lead = Lead::factory()->create();
-
         return [
-            'title' => $this->faker->sentence($nbWords = 6, $variableNbWords = true),
-            'body' => $this->faker->paragraphs($nb = 3, $asText = false),
-            'lead_id' => $lead->id,
-            'author_id' => $author->id,
-            'author_type' => \Tepuilabs\SimpleCrm\Tests\Models\User::class,
+            'title' => $this->faker->sentence,
+            'body' => $this->faker->paragraph,
         ];
     }
 

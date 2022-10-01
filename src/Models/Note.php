@@ -31,4 +31,9 @@ class Note extends Model
     {
         return $this->morphTo();
     }
+
+    public function author(): MorphTo
+    {
+        return $this->morphTo();
+    }
 }
