@@ -33,42 +33,42 @@ class ProjectFactory extends Factory
                 ProjectStatus::WIP(),
                 ProjectStatus::BLOCKED(),
                 ProjectStatus::COMPLETED(),
-            ])
+            ]),
         ];
     }
 
     public function statusOpen()
     {
         return $this->state([
-            'status' => ProjectStatus::OPEN()
+            'status' => ProjectStatus::OPEN(),
         ]);
     }
 
     public function statusCanceled()
     {
         return $this->state([
-            'status' => ProjectStatus::CANCELED()
+            'status' => ProjectStatus::CANCELED(),
         ]);
     }
 
     public function statusWip()
     {
         return $this->state([
-            'status' => ProjectStatus::WIP()
+            'status' => ProjectStatus::WIP(),
         ]);
     }
 
     public function statusBlocked()
     {
         return $this->state([
-            'status' => ProjectStatus::BLOCKED()
+            'status' => ProjectStatus::BLOCKED(),
         ]);
     }
 
     public function statusCompleted()
     {
         return $this->state([
-            'status' => ProjectStatus::COMPLETED()
+            'status' => ProjectStatus::COMPLETED(),
         ]);
     }
 }

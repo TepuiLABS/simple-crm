@@ -35,21 +35,21 @@ class NoteFactory extends Factory
     public function lowPriority(): NoteFactory
     {
         return $this->state([
-            'priority' => NotePriority::LOW_PRIORITY()
+            'priority' => NotePriority::LOW_PRIORITY(),
         ]);
     }
 
     public function mediumPriority(): NoteFactory
     {
         return $this->state([
-            'priority' => NotePriority::MEDIUM_PRIORITY()
+            'priority' => NotePriority::MEDIUM_PRIORITY(),
         ]);
     }
 
     public function highPriority(): NoteFactory
     {
         return $this->state([
-            'priority' => NotePriority::HIGH_PRIORITY()
+            'priority' => NotePriority::HIGH_PRIORITY(),
         ]);
     }
 }

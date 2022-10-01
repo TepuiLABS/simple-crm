@@ -42,21 +42,21 @@ class LeadFactory extends Factory
     public function leadStatus(): LeadFactory
     {
         return $this->state([
-            'status' => LeadStatus::LEAD_STATUS()
+            'status' => LeadStatus::LEAD_STATUS(),
         ]);
     }
 
     public function prospectStatus(): LeadFactory
     {
         return $this->state([
-            'status' => LeadStatus::PROSPECT_STATUS()
+            'status' => LeadStatus::PROSPECT_STATUS(),
         ]);
     }
 
     public function customerStatus(): LeadFactory
     {
         return $this->state([
-            'status' => LeadStatus::CUSTOMER_STATUS()
+            'status' => LeadStatus::CUSTOMER_STATUS(),
         ]);
     }
 }

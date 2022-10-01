@@ -21,9 +21,6 @@ class LeadStatus extends Enum
         };
     }
 
-    /**
-     *
-     */
     public function status(): string
     {
         return match ($this->value) {

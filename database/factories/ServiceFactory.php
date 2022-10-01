@@ -23,7 +23,7 @@ class ServiceFactory extends Factory
             'description' => $this->faker->sentence(6, true),
             'status' => $this->faker->randomElement([
                 StatusEnum::PUBLISHED(),
-                StatusEnum::DRAFT()
+                StatusEnum::DRAFT(),
             ]),
         ];
     }
