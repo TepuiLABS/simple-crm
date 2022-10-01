@@ -1,7 +1,7 @@
 <?php
 
-use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadStatus;
-use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadType;
+use Tepuilabs\SimpleCrm\Enums\Lead\LeadStatus;
+use Tepuilabs\SimpleCrm\Enums\Lead\LeadType;
 use Tepuilabs\SimpleCrm\Models\Lead;
 
 beforeEach(function () {
@@ -16,9 +16,9 @@ test('it can create lead', function () {
 });
 
 test('it can create a new lead', function () {
-    $this->assertEquals(LeadStatus::LEAD_STATUS(), $this->lead->status);
+    $this->assertEquals(LeadStatus::LEAD_STATUS(), $this->lead->status->value);
 });
 
 test('it can create a new lead as organic', function () {
-    $this->assertEquals(LeadType::ORGANIC_TYPE(), $this->lead->type);
+    $this->assertEquals(LeadType::ORGANIC_TYPE(), $this->lead->type->value);
 });

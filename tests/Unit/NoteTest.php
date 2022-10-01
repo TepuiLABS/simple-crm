@@ -1,6 +1,6 @@
 <?php
 
-use Tepuilabs\SimpleCrm\Models\Enums\Note\NotePriority;
+use Tepuilabs\SimpleCrm\Enums\Note\NotePriority;
 use Tepuilabs\SimpleCrm\Models\Lead;
 use Tepuilabs\SimpleCrm\Models\Note;
 use Tepuilabs\SimpleCrm\Tests\Models\User;
@@ -24,5 +24,5 @@ test('if a user can create a note', function () {
 });
 
 test('if note has low priority', function () {
-    $this->assertEquals(NotePriority::LOW_PRIORITY(), $this->note->priority);
+    $this->assertEquals(NotePriority::LOW_PRIORITY(), $this->note->priority->value);
 });

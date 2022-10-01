@@ -3,7 +3,7 @@
 namespace Tepuilabs\SimpleCrm\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Tepuilabs\SimpleCrm\Models\Enums\Note\NotePriority;
+use Tepuilabs\SimpleCrm\Enums\Note\NotePriority;
 use Tepuilabs\SimpleCrm\Models\Lead;
 use Tepuilabs\SimpleCrm\Models\Note;
 use Tepuilabs\SimpleCrm\Tests\Models\User;

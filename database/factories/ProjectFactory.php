@@ -4,7 +4,7 @@ namespace Tepuilabs\SimpleCrm\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
-use Tepuilabs\SimpleCrm\Models\Enums\ProjectStatus;
+use Tepuilabs\SimpleCrm\Enums\ProjectStatus;
 use Tepuilabs\SimpleCrm\Models\Project;
 
 class ProjectFactory extends Factory
@@ -27,13 +27,7 @@ class ProjectFactory extends Factory
             'title' => $this->faker->jobTitle(),
             'description' => $this->faker->paragraphs(),
             'deadline' => $this->faker->date(),
-            'status' => $this->faker->randomElement([
-                ProjectStatus::OPEN(),
-                ProjectStatus::CANCELED(),
-                ProjectStatus::WIP(),
-                ProjectStatus::BLOCKED(),
-                ProjectStatus::COMPLETED(),
-            ]),
+            'status' => $this->faker->randomElement(ProjectStatus::values()),
         ];
     }
 

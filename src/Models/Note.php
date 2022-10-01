@@ -5,7 +5,7 @@ namespace Tepuilabs\SimpleCrm\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Tepuilabs\SimpleCrm\Models\Enums\Note\NotePriority;
+use Tepuilabs\SimpleCrm\Enums\Note\NotePriority;
 
 class Note extends Model
 {

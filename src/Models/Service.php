@@ -4,7 +4,7 @@ namespace Tepuilabs\SimpleCrm\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Tepuilabs\SimpleCrm\Models\Enums\StatusEnum;
+use Tepuilabs\SimpleCrm\Enums\StatusEnum;
 
 class Service extends Model
 {

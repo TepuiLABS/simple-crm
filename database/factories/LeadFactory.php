@@ -3,8 +3,8 @@
 namespace Tepuilabs\SimpleCrm\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadStatus;
-use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadType;
+use Tepuilabs\SimpleCrm\Enums\Lead\LeadStatus;
+use Tepuilabs\SimpleCrm\Enums\Lead\LeadType;
 use Tepuilabs\SimpleCrm\Models\Lead;
 
 class LeadFactory extends Factory
