@@ -3,28 +3,29 @@
 namespace Tepuilabs\SimpleCrm\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Tepuilabs\SimpleCrm\Models\Enums\StatusEnum;
+use Tepuilabs\SimpleCrm\Enums\StatusEnum;
 use Tepuilabs\SimpleCrm\Models\Service;
 
 class ServiceFactory extends Factory
 {
     /**
-     * {@inheritdoc}
+     * The name of the factory's corresponding model.
+     *
+     * @var class-string<\Illuminate\Database\Eloquent\Model>
      */
     protected $model = Service::class;
 
     /**
-     * {@inheritdoc}
+     * Define the model's default state.
+     *
+     * @return array
      */
     public function definition(): array
     {
         return [
             'name' => $this->faker->sentence(6, true),
             'description' => $this->faker->sentence(6, true),
-            'status' => $this->faker->randomElement([
-                StatusEnum::PUBLISHED(),
-                StatusEnum::DRAFT()
-            ]),
+            'status' => $this->faker->randomElement(StatusEnum::values()),
         ];
     }
 }

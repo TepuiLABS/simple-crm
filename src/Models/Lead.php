@@ -5,15 +5,17 @@ namespace Tepuilabs\SimpleCrm\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadStatus;
-use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadType;
+use Tepuilabs\SimpleCrm\Enums\Lead\LeadStatus;
+use Tepuilabs\SimpleCrm\Enums\Lead\LeadType;
 
 class Lead extends Model
 {
     use HasFactory;
 
     /**
-     * {@inheritdoc}
+     * The attributes that are mass assignable.
+     *
+     * @var array<string>
      */
     protected $fillable = [
         'name',
@@ -23,7 +25,9 @@ class Lead extends Model
     ];
 
     /**
-     * {@inheritdoc}
+     * The attributes that should be cast to native types.
+     *
+     * @var array<string, string>
      */
     protected $casts = [
         'status' => LeadStatus::class,
@@ -31,7 +35,9 @@ class Lead extends Model
     ];
 
     /**
-     * @return MorphMany
+     * Get all of the lead's notes.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
      */
     public function notes(): MorphMany
     {

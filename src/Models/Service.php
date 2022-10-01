@@ -4,14 +4,16 @@ namespace Tepuilabs\SimpleCrm\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Tepuilabs\SimpleCrm\Models\Enums\StatusEnum;
+use Tepuilabs\SimpleCrm\Enums\StatusEnum;
 
 class Service extends Model
 {
     use HasFactory;
 
     /**
-     * {@inheritdoc}
+     * The attributes that are mass assignable.
+     *
+     * @var array<string>
      */
     protected $fillable = [
         'name',
@@ -20,7 +22,9 @@ class Service extends Model
     ];
 
     /**
-     * {@inheritdoc}
+     * The attributes that should be cast to native types.
+     *
+     * @var array<string, string>
      */
     protected $casts = [
         'status' => StatusEnum::class,

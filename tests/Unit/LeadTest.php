@@ -1,45 +1,35 @@
 <?php
 
-use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadStatus;
-use Tepuilabs\SimpleCrm\Models\Enums\Lead\LeadType;
+use function PHPUnit\Framework\assertEquals;
+use function PHPUnit\Framework\assertInstanceOf;
+use Tepuilabs\SimpleCrm\Enums\Lead\LeadStatus;
+use Tepuilabs\SimpleCrm\Enums\Lead\LeadType;
 use Tepuilabs\SimpleCrm\Models\Lead;
+use Tepuilabs\SimpleCrm\Models\Note;
 
-<<<<<<< HEAD
 beforeEach(function () {
     $this->lead = Lead::factory()
         ->organicType()
         ->leadStatus()
+        ->hasNotes(3)
         ->create();
 });
 
-test('it can create lead', function () {
-    $this->assertInstanceOf(Lead::class, $this->lead);
+it('can create lead', function () {
+    assertInstanceOf(Lead::class, $this->lead);
 });
 
-test('it can create a new lead', function () {
-    $this->assertEquals(LeadStatus::LEAD_STATUS(), $this->lead->status);
+it('can create a new lead', function () {
+    assertEquals(LeadStatus::LEAD_STATUS(), $this->lead->status->value);
 });
 
-test('it can create a new lead as organic', function () {
-    $this->assertEquals(LeadType::ORGANIC_TYPE(), $this->lead->type);
-=======
-test('it can create lead', function () {
-    $lead = Lead::factory()->create();
-
-    $this->assertInstanceOf(Lead::class, $lead);
+it('can create a new lead as organic', function () {
+    assertEquals(LeadType::ORGANIC_TYPE(), $this->lead->type->value);
 });
 
-test('it can create a new lead as statusProspect typeOrganic', function () {
-    $lead = Lead::factory()->statusProspect()->typeOrganic()->create();
-
-    expect($lead->type->types())->toBe('organic');
-    expect($lead->status->status())->toBe('prospect');
-});
-
-test('it can create a new lead as typeUserSubmitted statusLead', function () {
-    $lead = Lead::factory()->typeUserSubmitted()->statusLead()->create();
-
-    expect($lead->type->types())->toBe('user submitted');
-    expect($lead->status->status())->toBe('lead');
->>>>>>> master
+it('lead notes can be obtained', function () {
+    expect($this->lead->notes->count())
+        ->toBe(3)
+        ->and($this->lead->notes->first())
+        ->toBeInstanceOf(Note::class);
 });
