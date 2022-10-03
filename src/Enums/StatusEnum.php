@@ -8,10 +8,10 @@ use Datomatic\EnumHelper\EnumHelper;
  * @method static self DRAFT()
  * @method static self PUBLISHED()
  */
-enum StatusEnum
+enum StatusEnum: string
 {
     use EnumHelper;
 
-    case DRAFT;
-    case PUBLISHED;
+    case DRAFT = 'DRAFT';
+    case PUBLISHED = 'PUBLISHED';
 }
